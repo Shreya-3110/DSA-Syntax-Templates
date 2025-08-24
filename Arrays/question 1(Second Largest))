@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+#include<climits>
+using namespace std;
+
+int secondLargest(vector<int> & arr){
+
+
+
+int n = arr.size();
+
+if(n==0){
+return -1;
+} 
+
+ int largest= INT_MIN, secondLargest= INT_MIN;
+for(int i =0; i < n; i++) {
+   largest = max(largest, arr[i]);
+}
+
+for(int j =0; j <n; j++){
+if(arr[j] < largest && > arr[j] > secondLargest  ){
+secondLargest= arr[j];
+}
+
+}
+
+
+return (secondLargest == INT_MIN) ? -1 : secondLargest;
+
+
+int main() {
+vector<int> arr = {10,5,20,8};
+cout << secondLargest(arr) << endl;
+return 0
+}
